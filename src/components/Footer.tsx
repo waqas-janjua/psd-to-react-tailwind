@@ -28,8 +28,10 @@ export function Footer() {
       {/* With the rule 11px under it, the 329px minimum puts the rule where the original's sat. */}
       <div className="flex min-h-[329px] items-start stacked:block">
         <FooterColumn title="Latest tweets" className="ml-[14%] stacked:ml-[10%] stacked:h-[250px]">
-          <div className="mt-5 min-h-[150px] rounded-lg bg-ink-soft stacked:w-[80%]">
-            <p className="mt-2.5 font-display text-light">
+          {/* The text may run 2px past the box, as in the original at 414px; past that the box grows
+              (the original's fixed 150px let the last line spill out of the box at narrower widths). */}
+          <div className="mt-5 flow-root min-h-[150px] rounded-lg bg-ink-soft stacked:w-[80%]">
+            <p className="-mb-0.5 font-display text-light">
               ©<span className="text-accent">uniMall</span> Quisque venenatis, nisi quis condimentum viverra, lorem erat
               interdum eros, ac feugiat lorem magna vitae lorem.
               <br />
