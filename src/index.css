@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* Below the hero the original's desktop layout breaks under 894px, so the sections from the services
+   band down stack their columns there (registered first so `mobile:` wins where both apply). */
+@custom-variant stacked (@media only screen and (max-width: 893px));
+
+/* The original's single breakpoint: `@media only screen and (max-width: 600px)` (inclusive). */
+@custom-variant mobile (@media only screen and (max-width: 600px));
+
+@theme {
+  /* Fonts from reference/css/style.css */
+  --font-display: "Montserrat", sans-serif;
+  --font-nav: Arial, sans-serif;
+  --font-footer: Calibri, sans-serif;
+
+  /* Colours from reference/css/style.css */
+  --color-page: #f0f0f0;
+  --color-surface: #ffffff;
+  --color-rule: #d6d6d6;
+  --color-nav: #5a5a5a;
+  --color-accent: #6db1b4;
+  --color-muted: #9a9a9a;
+  --color-band: #359ba9;
+  --color-band-edge: #1d729b;
+  --color-light: #e7e7e7;
+  --color-ink-soft: #636363;
+  --color-footer: #110f0fe8;
+
+  /* The original's headings use `font-weight: lighter`; only Montserrat 400 is loaded, so it renders at 400. */
+  --font-weight-lighter: lighter;
+}
+
+@layer base {
+  /* The original's reset never applied (its stylesheet starts with a stray <style> tag),
+     so it renders with the browser's default 8px body margin and normal line-height. */
+  html {
+    line-height: normal;
+  }
+
+  body {
+    margin: 8px;
+    background-color: var(--color-page);
+  }
+}
